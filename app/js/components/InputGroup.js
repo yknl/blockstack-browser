@@ -8,6 +8,7 @@ class InputGroup extends Component {
     data: PropTypes.object,
     onChange: PropTypes.func,
     type: PropTypes.string,
+    step: PropTypes.string,
     disabled: PropTypes.bool,
     inverse: PropTypes.bool,
     textarea: PropTypes.bool,
@@ -18,6 +19,7 @@ class InputGroup extends Component {
   render() {
     let value = '',
         type = "text",
+        step = "any",
         disabled = false,
         required = false
     if (this.props.data && this.props.name) {
@@ -61,6 +63,7 @@ class InputGroup extends Component {
               disabled={disabled}
               className={inputClass}
               type={type}
+              step={step}
               required={required}
               placeholder={
                 this.props.placeholder ? this.props.placeholder : this.props.label
